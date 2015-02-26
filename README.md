@@ -6,8 +6,11 @@ Streams kafka messages on to browser
 
 
 How to start nodejs service
+
   cd nodejs-kafka-streaming
+  
   npm install
+  
   node app.js
   
   
