@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Socket.IO Example</title>
+  </head>
+  <body>
+    <h1>Socket.IO Example</h1>
+    <ul class="newData"></ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>    
+    <script>
+	    (function($) {
+		      var socket = io.connect('http://localhost:3000', { transports: [ 'websocket', 'flashsocket' ] });
+		      socket.on('newData', function(data) {
+			console.log('new Data received');
+			$('.newData').prepend('<li>' + data + '</li>');
+		      });
+	    })(jQuery);
+    </script>
+  </body>
+</html>
